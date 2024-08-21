@@ -2,7 +2,7 @@ import ProductBasedInvestment from "./pages/productBasedInvestment/ProductBasedI
 
 function App() {
   
-
+  
   return (
     <>
       <ProductBasedInvestment></ProductBasedInvestment>
