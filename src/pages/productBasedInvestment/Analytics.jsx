@@ -95,8 +95,8 @@ const Analytics = () => {
                     <div key={singleCard.id} className="p-4 sm:col-span-3 min-h-[150px] border shadow-lg rounded relative">
                         <p className="sm:text-lg text-md font-semibold">{singleCard.title}</p>
                         <p className="sm:text-2xl font-bold text-lg">
-                            {(singleCard.id === 3 || singleCard.id === 4 ? "TK " : "") + singleCard.status}
-                            {(singleCard.id === 3 || singleCard.id === 4 ? 
+                            {(singleCard.id === 'total-expenses' || singleCard.id === 'total-revenue' ? "TK " : "") + singleCard.status}
+                            {(singleCard.id === 'total-expenses' || singleCard.id === 'total-revenue' ? 
                                 
                                     <div className="flex items-center gap-1 sm:mt-1">
                                         <CircleArrowUp className=" text-[#00E676] size-5 sm:mt-1"></CircleArrowUp> 
