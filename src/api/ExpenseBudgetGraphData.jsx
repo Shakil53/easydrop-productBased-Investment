@@ -1,11 +1,11 @@
-export const data = [
-  { name: 'Group A', value: 400 },
-  { name: 'Group B', value: 300 },
-  { name: 'Group C', value: 300 },
-  { name: 'Group D', value: 200 },
+export const dataExpenseBudgetGraphData = [
+  { name: 'Office rent', value: 400 },
+  { name: 'Employee salary', value: 200 },
+  { name: 'Transportation', value: 300 },
+  
 ];
 
-export const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+export const COLORS = ['#FF0080', '#9B2CE5', '#744692'];
 
 export const RADIAN = Math.PI / 180;
 export const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {

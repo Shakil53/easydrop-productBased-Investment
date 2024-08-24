@@ -7,13 +7,13 @@ import { ArrowRight } from 'lucide-react';
 import { NavLink } from "react-router-dom";
 import { CircleArrowUp } from 'lucide-react';
 import { Area, AreaChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
-import { data } from "@/api/salesGrowth";
 import { Cell, Pie, PieChart, } from "recharts";
-import { COLORS, renderCustomizedLabel, style } from "@/api/ExpenseBudgetGraphData";
+import { COLORS, dataExpenseBudgetGraphData, renderCustomizedLabel, style } from "@/api/ExpenseBudgetGraphData";
 import {Table,TableBody,TableCell,TableHead,TableHeader,TableRow,} from "@/components/ui/table"
 import topGainProductImg from '../../assets/images/img.png'
 import { Download } from 'lucide-react';
 import { convertToCSV, downloadCSV } from "@/utils/income-statement-csv-download";
+import { dataSalesGrowth } from "@/api/salesGrowth";
 
 
 
@@ -31,7 +31,7 @@ const Analytics = () => {
     
     const handleDownload = () => {
         const csvString = convertToCSV(data);
-        downloadCSV(csvString, 'financial-data.csv');
+        downloadCSV(csvString, 'EasyDrop-Income Statement.csv');
     };
     
     const investmentDetails = [
@@ -138,12 +138,12 @@ const Analytics = () => {
                     </div>
                         {/* Graph chart ---------------------- */}
                      <ResponsiveContainer width="100%" height="85%">
-                            <AreaChart width={730} height={250} data={data}
+                            <AreaChart width={730} height={250} data={dataSalesGrowth}
                                 margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                                 <defs>
-                                    <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="5%" stopColor="#522F8F" stopOpacity={0.8}/>
-                                    <stop offset="95%" stopColor="#4332CA" stopOpacity={0}/>
+                                    <linearGradient id="colorUv1" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="5%" stopColor="#522F8F" stopOpacity={0.8}/>
+                                        <stop offset="95%" stopColor="#522F8F" stopOpacity={0}/>
                                     </linearGradient>
                                     
                                 </defs>
@@ -151,11 +151,12 @@ const Analytics = () => {
                                 <YAxis />
                                 <CartesianGrid strokeDasharray="3 3" />
                                 <Tooltip />
-                                <Area type="monotone" dataKey="uv" stroke="#FF0080" fillOpacity={1} fill="url(#colorUv)" />
+                                <Area type="monotone" dataKey="uv" stroke="#FF0080" fillOpacity={1} fill="url(#colorUv1)" />
                             
-                                        {/* <Area type="monotone" dataKey="uv" stroke="#FF0080" fill="#522F8F"/> */}
                                 </AreaChart>
+                                        {/* <Area type="monotone" dataKey="uv" stroke="#FF0080" fill="#522F8F"/> */}
                         </ResponsiveContainer>
+                        
                     
                 </div>
                 {/* Revenue Content------------2 */}
@@ -182,7 +183,7 @@ const Analytics = () => {
                         <ResponsiveContainer>
                             <PieChart>
                                 <Pie
-                                    data={data}
+                                    data={dataExpenseBudgetGraphData}
                                     cx="50%"
                                     cy="50%"
                                     labelLine={false}
