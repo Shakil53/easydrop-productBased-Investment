@@ -4,7 +4,7 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrig
 import { IoIosArrowDown } from "react-icons/io";
 import { IoNotifications } from "react-icons/io5";
 import { ArrowRight } from 'lucide-react';
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { CircleArrowUp } from 'lucide-react';
 import { Area, AreaChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { Cell, Pie, PieChart, } from "recharts";
@@ -20,6 +20,11 @@ import { dataSalesGrowth } from "@/api/salesGrowth";
 
 
 const Analytics = () => {
+    const navigate = useNavigate();
+
+    const goToSuggesstedProductPage = () => {
+        navigate('/productBased-investment/analytics/suggested-product');
+    };
     const data = [
         { label: 'Total Income', value: 'TODO' },
         { label: 'Cost of Goods', value: 'TODO' },
@@ -35,10 +40,10 @@ const Analytics = () => {
     };
     
     const investmentDetails = [
-        { id: 1, title: 'Invested Products', status: '3' },
-        { id: 2, title: 'Total Products', status: '200' },
-        { id: 3, title: 'Total Expenses', status: ' 2000' },
-        { id: 4, title: 'Total Revenue', status: ' 5000' },
+        { id: 'invested-products', title: 'Invested Products', status: '3' },
+        { id: 'total-products', title: 'Total Products', status: '200' },
+        { id: 'total-expenses', title: 'Total Expenses', status: ' 2000' },
+        { id: 'total-revenue', title: 'Total Revenue', status: ' 5000' },
         // Add more objects as needed
     ];
     
@@ -106,12 +111,12 @@ const Analytics = () => {
                                : ''
                             )}
                         </p>
-                        <NavLink to={`/details/${singleCard.id}`}>
+                        <NavLink to={`/productBased-investment/analytics/${singleCard.id}`}>
                             <ArrowRight className="absolute bottom-4 right-4" />
                         </NavLink>
                     </div>
                 ))}
-                </div>
+            </div>
             {/* Content here-------------- */}
             <div className="p-3 grid sm:grid-cols-12 gap-4">
                 {/* Sales Growth content here---- */}
@@ -230,7 +235,7 @@ const Analytics = () => {
                                 </div>
                         </div>
                         {/* data here */}
-                        <div className="p-4 items-center py-16">
+                        <div className="p-4 items-center py-20">
                             <div className="flex justify-between">
                                 <div className="flex flex-col">
                                 <p>Total Income</p>
@@ -313,6 +318,9 @@ const Analytics = () => {
 
                         </div>
                     </div>
+                    <div className="flex justify-end">
+                            <button onClick={goToSuggesstedProductPage} className="text-xs px-2.5 py-1 shadow-2xl text-white rounded-xl bg-[#522F8F]">View more</button>
+                        </div>
                 </div>
             </div>
 
