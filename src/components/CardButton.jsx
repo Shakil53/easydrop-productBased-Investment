@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 function CardButton({ label, onClick }) {
   return (
     <Button
-      className="min-w-[87px] min-h-[21px] px:4 rounded-[15px] md:px-4 text-[10px] md:text-[14px] bg-[#522F8F] hover:bg-[#522F8F] "
+      className=" py-[4px] md:py-[8px] px-[10px] md:px-[15px] rounded-[10px] text-[12px] md:text-[14px] bg-[#522F8F] hover:bg-[#522F8F]"
       onClick={onClick}
     >
       {label}
