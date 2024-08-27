@@ -84,10 +84,10 @@ const InvestedProduct = () => {
 
         {/* Content Section */}
         <div className="p-4 flex justify-between">
-            <h1 className="font-semibold text-xl sm:text-3xl">Invested Product</h1>
+            <h1 className="font-bold sm:font-semibold text-md sm:text-3xl">Invested Product</h1>
             <div className="flex gap-2 items-center">
                 <Select>
-                    <SelectTrigger className="w-[65px] sm:w-[150px]">
+                    <SelectTrigger className="w-[90px] sm:w-[150px]">
                         <SelectValue placeholder="Year" />
                     </SelectTrigger>
                     <SelectContent>
@@ -102,7 +102,7 @@ const InvestedProduct = () => {
                     </SelectContent>
                 </Select>
                 <Select>
-                    <SelectTrigger className="w-[80px] sm:w-[150px]">
+                    <SelectTrigger className="w-[90px] sm:w-[150px]">
                         <SelectValue placeholder="Month" />
                     </SelectTrigger>
                     <SelectContent>
@@ -123,10 +123,10 @@ const InvestedProduct = () => {
                 <Table>
                     <TableHeader>
                         <TableRow>
-                            <TableHead className="w-[150px] text-lg">Sl No</TableHead>
-                            <TableHead className="text-lg">Name</TableHead>
-                            <TableHead className="text-lg text-center">Quantity Sole</TableHead>
-                            <TableHead className="text-lg text-center">Current Stock</TableHead>
+                            <TableHead className="w-[150px] text-md sm:text-lg">Sl No</TableHead>
+                            <TableHead className="text-md sm:text-lg">Name</TableHead>
+                            <TableHead className="text-md sm:text-lg text-center">Quantity Sole</TableHead>
+                            <TableHead className="text-md sm:text-lg text-center">Current Stock</TableHead>
                             
                         </TableRow>
                     </TableHeader>

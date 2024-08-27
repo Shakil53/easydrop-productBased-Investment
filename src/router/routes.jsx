@@ -52,6 +52,10 @@ export const router = createBrowserRouter([
         path: 'wallet',
         element: <Wallet></Wallet>
       },
+      // {
+      //   path: 'wallet/add-investment',
+      //   element: <TODO>
+      // },
      
     ]
   },

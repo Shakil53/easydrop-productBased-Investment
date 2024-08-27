@@ -123,9 +123,9 @@ const Analytics = () => {
                 <div className="sm:col-span-8 rounded-lg border p-4 shadow-md">
                     {/* heading--- */}
                     <div className="flex justify-between items-center">
-                        <h1 className="font-semibold text-xl">Sales Growth</h1>
+                        <h1 className=" text-xl font-bold sm:font-semibold text-md sm:text-2xl">Sales Growth</h1>
                         <Select>
-                            <SelectTrigger className="w-[100px] sm:w-[150px]">
+                            <SelectTrigger className="w-[90px] sm:w-[150px]">
                                 <SelectValue placeholder="Year" />
                             </SelectTrigger>
                             <SelectContent>
@@ -168,10 +168,10 @@ const Analytics = () => {
                 <div className="sm:col-span-4 rounded-lg border p-4 shadow-md">
                      {/* heading--- */}
                      <div className="flex justify-between items-center">
-                        <h1 className="font-semibold text-xl">Revenue</h1>
+                        <h1 className="font-bold sm:font-semibold text-md sm:text-2xl">Revenue</h1>
                         <Select>
-                            <SelectTrigger className="w-[100px] sm:w-[150px]">
-                                <SelectValue placeholder="This month" />
+                            <SelectTrigger className="w-[90px] sm:w-[150px]">
+                                <SelectValue placeholder="Month" />
                             </SelectTrigger>
                             <SelectContent>
                                 <SelectGroup>
@@ -214,13 +214,13 @@ const Analytics = () => {
                     <div>
                         {/* heading--- */}
                         <div className="flex justify-between items-center">
-                            <h1 className="font-semibold text-xl">Income Statement</h1>
+                            <h1 className="font-bold sm:font-semibold text-md sm:text-2xl">Income Statement</h1>
                             <div className="flex gap-2">
-                                    {/* <button className="text-[#000000] border-[1px] border-[#676767] border-opacity-50 bg-transparent text-[10px] md:text-[14px] hover:bg-transparent">{RiDownload2Fill} CVS </button> */}
+                                
                                     <button onClick={handleDownload} className="border rounded w-20 flex items-center justify-around"><Download className="size-4"></Download><span className="text-md">CSV</span></button>    
                                     <Select>
-                                    <SelectTrigger className="w-[100px] sm:w-[150px]">
-                                        <SelectValue placeholder="This month" />
+                                    <SelectTrigger className="w-[90px] sm:w-[150px]">
+                                        <SelectValue placeholder="Month" />
                                     </SelectTrigger>
                                     <SelectContent>
                                         <SelectGroup>
@@ -271,10 +271,10 @@ const Analytics = () => {
                 <div className="sm:col-span-4 rounded-lg border p-4 shadow-md">
                     {/* heading--- */}
                     <div className="flex justify-between items-center mb-1">
-                        <h1 className="font-semibold text-xl">Top Gainer Product</h1>
+                        <h1 className="font-bold sm:font-semibold text-md sm:text-2xl">Top Suggested Product</h1>
                         <Select>
-                            <SelectTrigger className="w-[100px] sm:w-[150px]">
-                                <SelectValue placeholder="month" />
+                            <SelectTrigger className="w-[90px] sm:w-[150px]">
+                                <SelectValue placeholder="Month" />
                             </SelectTrigger>
                             <SelectContent>
                                 <SelectGroup>

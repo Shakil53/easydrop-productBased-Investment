@@ -6,6 +6,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoNotifications } from "react-icons/io5";
+
 const TotalExpenses = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const rowsPerPage = 15;
