@@ -36,11 +36,15 @@ const ProductBasedInvestmentWallet = () => {
             Payment Request
           </p>
           <div className="flex flex-wrap gap-1 md:gap-2">
+            {/* *******CSV Download Button *********** */}
             <InvestmentButton icon={<RiDownload2Fill />} label="Export CSV" />
-            <NavLink to="/equitybased-investment/pricing">
+
+            {/* *******Add Investment Button *********** */}
+            <NavLink to="/productBased-investment/pricing">
               <InvestmentButton icon={<FaPlus />} label="Add Invest" />
             </NavLink>
-            <NavLink to="/equitybased-investment/investment_list">
+            {/* ******View All Button******** */}
+            <NavLink to="/productBased-investment/payment-request">
               <InvestmentButton
                 icon={<FaArrowRight />}
                 label="View All"
@@ -49,6 +53,7 @@ const ProductBasedInvestmentWallet = () => {
             </NavLink>
           </div>
         </div>
+        {/* ******Payment Request Table  ******** */}
         <InvestmentList data={limitedData} />
       </div>
       {/* -------------Last Transaction ------------- */}

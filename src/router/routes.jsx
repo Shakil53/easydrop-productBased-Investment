@@ -1,4 +1,5 @@
 import App from "@/App";
+import InvestmentList from "@/components/Wallet/InvestmentList";
 import LatestInvestmentPage from "@/pages/product/LatestInvestmentPage";
 import LatestOrderPage from "@/pages/product/LatestOrderPage";
 import PopularAssetsPage from "@/pages/product/PopularAssetsPage";
@@ -10,6 +11,7 @@ import SuggestedProduct from "@/pages/productBasedInvestment/SuggestedProduct";
 import TotalExpenses from "@/pages/productBasedInvestment/TotalExpenses";
 import TotalProducts from "@/pages/productBasedInvestment/TotalProducts";
 import TotalRevenue from "@/pages/productBasedInvestment/TotalRevenue";
+import InvestmentListPage from "@/pages/wallet/InvestmentListPage";
 import Pricing from "@/pages/wallet/Pricing";
 
 import ProductBasedInvestmentWallet from "@/pages/wallet/ProductBasedInvestmentWallet";
@@ -70,6 +72,10 @@ export const router = createBrowserRouter([
       {
         path: "wallet",
         element: <ProductBasedInvestmentWallet></ProductBasedInvestmentWallet>,
+      },
+      {
+        path: "payment-request",
+        element: <InvestmentListPage></InvestmentListPage>,
       },
       {
         path: "pricing",

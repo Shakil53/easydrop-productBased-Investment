@@ -58,7 +58,9 @@ function LatestInvestmentTable({
   }
 
   return (
-    <div className="border-2 border-[#D9D9D9] rounded-lg p-6">
+    <div
+      className={`${!details && "border-2"} border-[#D9D9D9] rounded-lg p-6`}
+    >
       <div className="flex justify-between my-4">
         <h3 className="text-[#484646] text-[20px] font-bold">{title}</h3>
         {buttonLabel && (
