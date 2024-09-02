@@ -8,44 +8,29 @@ import { IoIosArrowDown } from "react-icons/io";
 import { IoNotifications } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import { Plus } from 'lucide-react';
+import TablePagination from "@/components/ui/TablePagination";
 
 
 const SuggestedProduct = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    
+    // pagination-------
     const [currentPage, setCurrentPage] = useState(1);
-    const rowsPerPage = 15;
-    const totalPages = Math.ceil(tableDatasSuggestedProduct.length / rowsPerPage);
+  const itemsPerPage = 8;
+  const totalPages = Math.ceil(tableDatasSuggestedProduct.length / itemsPerPage);
 
-    // Get current page data
-    const currentData = tableDatasSuggestedProduct.slice(
-        (currentPage - 1) * rowsPerPage,
-        currentPage * rowsPerPage
-    );
+  // Get data for the current page
+  const currentData = tableDatasSuggestedProduct.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
 
-    // Handle page change
-    const handlePageChange = (pageNumber) => {
-        if (pageNumber >= 1 && pageNumber <= totalPages) {
-            setCurrentPage(pageNumber);
-        }
+  // Handle page change
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
     };
+    
 
-    // Generate page numbers
-    const pageNumbers = () => {
-        const range = 3;
-        let start = Math.max(currentPage - range, 1);
-        let end = Math.min(currentPage + range, totalPages);
-
-        if (end - start < 2 * range) {
-            start = Math.max(end - 2 * range, 1);
-        }
-
-        const pages = [];
-        for (let i = start; i <= end; i++) {
-            pages.push(i);
-        }
-
-        return pages;
-    };
 
     // navigation goToAddInvestmentPage
     const goToSuggesstedProductPage = () => {
@@ -142,7 +127,7 @@ const SuggestedProduct = () => {
                     <TableBody>
                         {currentData.map((data, index) => (
                             <TableRow key={data.invoice}>
-                                <TableCell>{(currentPage - 1) * rowsPerPage + index + 1}</TableCell>
+                                <TableCell>{(currentPage - 1) * itemsPerPage + index + 1}</TableCell>
                                 <TableCell>{data.name}</TableCell>
                                 <TableCell>{data.wholesale_price}</TableCell>
                                 <TableCell>{data.selling_price}</TableCell>
@@ -154,39 +139,14 @@ const SuggestedProduct = () => {
                 </Table>
 
                 {/* Pagination Section */}
-                <div className="flex justify-end items-center mt-4">
-                    <button
-                        onClick={() => handlePageChange(currentPage - 1)}
-                        className="px-3 py-1 rounded bg-gray-200 text-gray-700 disabled:opacity-50"
-                        disabled={currentPage === 1}
-                    >
-                        Previous
-                    </button>
-
-                    <div className="flex">
-                        {pageNumbers().map((pageNumber) => (
-                            <button
-                                key={pageNumber}
-                                onClick={() => handlePageChange(pageNumber)}
-                                className={`px-3 py-1 mx-1 rounded ${
-                                    currentPage === pageNumber
-                                        ? 'bg-blue-500 text-white'
-                                        : 'bg-gray-200 text-gray-700'
-                                }`}
-                            >
-                                {pageNumber}
-                            </button>
-                        ))}
-                    </div>
-
-                    <button
-                        onClick={() => handlePageChange(currentPage + 1)}
-                        className="px-3 py-1 rounded bg-gray-200 text-gray-700 disabled:opacity-50"
-                        disabled={currentPage === totalPages}
-                    >
-                        Next
-                    </button>
-                </div>
+                <div className="text-right py-4">
+        <TablePagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          handlePageChange={handlePageChange}
+          maxPageNumbersToShow={3}
+        />
+      </div>
             </div>
         </div>
     </>
